@@ -29,3 +29,4 @@ def get_other_reviews():
         other_reviews = db( (db.review.product_id == request.vars.product_id) & (db.review.email != auth.user.email) ).select()
     
     return response.json(dict(other_reviews=other_reviews))
+    #comment
