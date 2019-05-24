@@ -1017,3 +1017,6 @@
 127.0.0.1, 2019-05-24 01:59:39, GET, /admin/default/site, HTTP/1.1, 200, 0.037000
 127.0.0.1, 2019-05-24 02:00:01, POST, /admin/default/site, HTTP/1.1, 303, 0.700000
 127.0.0.1, 2019-05-24 02:00:01, GET, /admin/default/site, HTTP/1.1, 200, 0.031000
+127.0.0.1, 2019-05-24 02:01:07, GET, /admin/default/uninstall/hw5_v3, HTTP/1.1, 200, 0.035000
+127.0.0.1, 2019-05-24 02:01:09, POST, /admin/default/uninstall/hw5_v3, HTTP/1.1, 303, 0.249000
+127.0.0.1, 2019-05-24 02:01:09, GET, /admin/default/site, HTTP/1.1, 200, 0.025000
