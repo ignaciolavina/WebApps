@@ -1,4 +1,4 @@
-let processBooks = function () {
+let processProducts = function () {
     let index = 0;
     app.products.map((product) => {
         Vue.set(product, 'index', index++);
@@ -9,10 +9,10 @@ let processBooks = function () {
     });
 };
 
-let getAllBooks = function () {
-    $.getJSON(getAllBooksUrl, function (response) {
+let getAllProducts = function () {
+    $.getJSON(getAllProductsUrl, function (response) {
         app.products = response.products;
-        processBooks();
+        processProducts();
     });
 };
 
@@ -25,7 +25,7 @@ let getLoggedInUser = function (callback) {
 
 let onPageLoad = function () {
     getLoggedInUser(function () {
-        getAllBooks();
+        getAllProducts();
     });
 };
 
@@ -90,7 +90,9 @@ let app = new Vue({
     methods: {
         getYourReview: getYourReview,
         toggleReviewsSection: toggleReviewsSection,
-        saveReview: saveReview
+        saveReview: saveReview,
+        getAllProducts: getAllProducts,
+        processProducts: processProducts
     }
 });
 
