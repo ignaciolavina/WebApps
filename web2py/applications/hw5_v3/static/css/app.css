@@ -1,8 +1,8 @@
-.all-books {
+.all-products {
     padding: 20px;
 }
 
-.book-container {
+.product-container {
     background-color: powderblue;
     padding: 10px 20px;
     margin-top: 20px;
@@ -11,7 +11,7 @@
     border-radius: 15px;
 }
 
-.book-title {
+.product-title {
     font-style: italic;
     font-size: 25px;
 }
