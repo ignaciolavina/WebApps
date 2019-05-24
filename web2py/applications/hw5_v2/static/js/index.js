@@ -1,6 +1,6 @@
 let processBooks = function () {
     let index = 0;
-    app.books.map((book) => {
+    app.products.map((book) => {
         Vue.set(book, 'index', index++);
         Vue.set(book, 'showReviews', false);
         Vue.set(book, 'yourReview', { body: '' });
@@ -11,7 +11,7 @@ let processBooks = function () {
 
 let getAllBooks = function () {
     $.getJSON(getAllBooksUrl, function (response) {
-        app.books = response.products;
+        app.products = response.products;
         processBooks();
     });
 };
@@ -35,7 +35,7 @@ let getYourReview = function (bookIndex) {
         return;
     }
 
-    let book = app.books[bookIndex];
+    let book = app.products[bookIndex];
 
     $.getJSON(getYourReviewUrl, { product_id: book.id, email: app.loggedInUser }, function (response) {
         if (response.review != null) {
@@ -46,14 +46,14 @@ let getYourReview = function (bookIndex) {
 };
 
 let getOtherReviews = function (bookIndex) {
-    let book = app.books[bookIndex];
+    let book = app.products[bookIndex];
     $.getJSON(getOtherReviewsUrl, { product_id: book.id }, function (response) {
         book.otherReviews = response.other_reviews;
     });
 };
 
 let toggleReviewsSection = function (bookIndex) {
-    let book = app.books[bookIndex];
+    let book = app.products[bookIndex];
     book.showReviews = !book.showReviews;
 };
 
@@ -63,7 +63,7 @@ let saveReview = function (bookIndex) {
         return;
     }
 
-    let book = app.books[bookIndex];
+    let book = app.products[bookIndex];
     let yourReview = book.yourReview;
     yourReview.hasBeenSaved = false;
 
@@ -84,7 +84,7 @@ let app = new Vue({
     delimiters: ['${', '}'],
     unsafeDelimiters: ['!{', '}'],
     data: {
-        books: [],
+        products: [],
         loggedInUser: undefined
     },
     methods: {
