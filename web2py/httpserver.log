@@ -1099,3 +1099,12 @@
 127.0.0.1, 2019-05-24 02:08:44, GET, /hw5_v3/default/index, HTTP/1.1, 200, 0.071000
 127.0.0.1, 2019-05-24 02:08:44, GET, /hw5_v3/api/get_logged_in_user, HTTP/1.1, 200, 0.084000
 127.0.0.1, 2019-05-24 02:08:44, GET, /hw5_v3/api/get_all_books, HTTP/1.1, 200, 0.068000
+127.0.0.1, 2019-05-24 02:09:30, GET, /hw5_v3/default/index, HTTP/1.1, 200, 0.054000
+127.0.0.1, 2019-05-24 02:09:30, GET, /hw5_v3/static/js/index.js, HTTP/1.1, 304, 0.001000
+127.0.0.1, 2019-05-24 02:09:31, GET, /hw5_v3/api/get_logged_in_user, HTTP/1.1, 200, 0.049000
+127.0.0.1, 2019-05-24 02:09:31, GET, /hw5_v3/static/images/favicon.ico, HTTP/1.1, 200, 0.001000
+127.0.0.1, 2019-05-24 02:09:31, GET, /hw5_v3/api/get_all_books, HTTP/1.1, 200, 0.052000
+127.0.0.1, 2019-05-24 02:09:42, GET, /hw5_v3/default/index, HTTP/1.1, 200, 0.063000
+127.0.0.1, 2019-05-24 02:09:42, GET, /hw5_v3/api/get_logged_in_user, HTTP/1.1, 200, 0.052000
+127.0.0.1, 2019-05-24 02:09:42, GET, /hw5_v3/static/images/favicon.ico, HTTP/1.1, 200, 0.001000
+127.0.0.1, 2019-05-24 02:09:42, GET, /hw5_v3/api/get_all_books, HTTP/1.1, 200, 0.049000
