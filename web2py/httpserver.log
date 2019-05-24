@@ -1,0 +1,12 @@
+127.0.0.1, 2019-05-24 01:30:43, GET, /hw5_v1/default/index, HTTP/1.1, 404, 0.018000
+127.0.0.1, 2019-05-24 01:31:06, GET, /admin/default/site, HTTP/1.1, 200, 0.004000
+127.0.0.1, 2019-05-24 01:31:21, GET, /, HTTP/1.1, 303, 0.001000
+127.0.0.1, 2019-05-24 01:31:21, GET, /welcome/default/index, HTTP/1.1, 200, 0.034000
+127.0.0.1, 2019-05-24 01:31:22, GET, /welcome/static/images/background.jpg, HTTP/1.1, 404, 0.001000
+127.0.0.1, 2019-05-24 01:31:23, GET, /admin/default/site, HTTP/1.1, 303, 0.012000
+127.0.0.1, 2019-05-24 01:31:23, GET, /admin/default/index, HTTP/1.1, 200, 0.014000
+127.0.0.1, 2019-05-24 01:31:26, POST, /admin/default/index, HTTP/1.1, 303, 0.020000
+127.0.0.1, 2019-05-24 01:31:26, GET, /admin/default/site, HTTP/1.1, 200, 0.024000
+127.0.0.1, 2019-05-24 01:31:26, POST, /admin/default/check_version, HTTP/1.1, 200, 0.342000
+127.0.0.1, 2019-05-24 01:31:28, GET, /hw5_v1/default/index, HTTP/1.1, 404, 0.033000
+127.0.0.1, 2019-05-24 01:31:28, GET, /hw5_v1/default/index, HTTP/1.1, 404, 0.027000
