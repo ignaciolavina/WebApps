@@ -1108,3 +1108,6 @@
 127.0.0.1, 2019-05-24 02:09:42, GET, /hw5_v3/api/get_logged_in_user, HTTP/1.1, 200, 0.052000
 127.0.0.1, 2019-05-24 02:09:42, GET, /hw5_v3/static/images/favicon.ico, HTTP/1.1, 200, 0.001000
 127.0.0.1, 2019-05-24 02:09:42, GET, /hw5_v3/api/get_all_books, HTTP/1.1, 200, 0.049000
+127.0.0.1, 2019-05-24 02:10:51, GET, /hw5_v3/default/index, HTTP/1.1, 200, 0.073000
+127.0.0.1, 2019-05-24 02:10:51, GET, /hw5_v3/api/get_logged_in_user, HTTP/1.1, 200, 0.056000
+127.0.0.1, 2019-05-24 02:10:51, GET, /hw5_v3/api/get_all_books, HTTP/1.1, 200, 0.049000
