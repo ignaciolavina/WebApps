@@ -37,7 +37,7 @@ let getYourReview = function (bookIndex) {
 
     let book = app.books[bookIndex];
 
-    $.getJSON(getYourReviewUrl, { book_id: book.id, email: app.loggedInUser }, function (response) {
+    $.getJSON(getYourReviewUrl, { product_id: book.id, email: app.loggedInUser }, function (response) {
         if (response.review != null) {
             book.yourReview = response.review;
         }
@@ -47,7 +47,7 @@ let getYourReview = function (bookIndex) {
 
 let getOtherReviews = function (bookIndex) {
     let book = app.books[bookIndex];
-    $.getJSON(getOtherReviewsUrl, { book_id: book.id }, function (response) {
+    $.getJSON(getOtherReviewsUrl, { product_id: book.id }, function (response) {
         book.otherReviews = response.other_reviews;
     });
 };
@@ -68,7 +68,7 @@ let saveReview = function (bookIndex) {
     yourReview.hasBeenSaved = false;
 
     $.post(saveReviewUrl, {
-        book_id: book.id,
+        product_id: book.id,
         email: app.loggedInUser,
         body: yourReview.body
     }, function (response) {

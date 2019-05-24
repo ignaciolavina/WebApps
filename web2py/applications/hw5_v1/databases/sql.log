@@ -1,4 +1,4 @@
-timestamp: 2019-05-15T06:29:06.386000
+timestamp: 2019-05-24T01:07:30.187000
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "first_name" CHAR(128),
@@ -10,21 +10,21 @@ CREATE TABLE "auth_user"(
     "registration_id" CHAR(512)
 );
 success!
-timestamp: 2019-05-15T06:29:06.425000
+timestamp: 2019-05-24T01:07:30.214000
 CREATE TABLE "auth_group"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "role" CHAR(512),
     "description" TEXT
 );
 success!
-timestamp: 2019-05-15T06:29:06.454000
+timestamp: 2019-05-24T01:07:30.233000
 CREATE TABLE "auth_membership"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2019-05-15T06:29:06.482000
+timestamp: 2019-05-24T01:07:30.250000
 CREATE TABLE "auth_permission"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
@@ -33,7 +33,7 @@ CREATE TABLE "auth_permission"(
     "record_id" INTEGER
 );
 success!
-timestamp: 2019-05-15T06:29:06.513000
+timestamp: 2019-05-24T01:07:30.272000
 CREATE TABLE "auth_event"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "time_stamp" TIMESTAMP,
@@ -43,7 +43,7 @@ CREATE TABLE "auth_event"(
     "description" TEXT
 );
 success!
-timestamp: 2019-05-15T06:29:06.545000
+timestamp: 2019-05-24T01:07:30.293000
 CREATE TABLE "auth_cas"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
@@ -53,29 +53,19 @@ CREATE TABLE "auth_cas"(
     "renew" CHAR(1)
 );
 success!
-timestamp: 2019-05-15T06:29:49.978000
-CREATE TABLE "book"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "title" CHAR(512),
-    "author" CHAR(512)
-);
-success!
-timestamp: 2019-05-15T06:29:50.025000
-CREATE TABLE "review"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "book_id" INTEGER REFERENCES "book" ("id") ON DELETE CASCADE  ,
-    "email" CHAR(512),
-    "body" TEXT
-);
-success!
-timestamp: 2019-05-15T08:21:37.994000
-ALTER TABLE "review" ADD "name" CHAR(512);
-success!
-timestamp: 2019-05-24T00:46:58.232000
+timestamp: 2019-05-24T01:07:30.319000
 CREATE TABLE "product"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "title" CHAR(512),
     "author" CHAR(512)
 );
 success!
+timestamp: 2019-05-24T01:07:30.340000
+CREATE TABLE "review"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "product_id" INTEGER REFERENCES "product" ("id") ON DELETE CASCADE  ,
+    "body" TEXT,
+    "email" CHAR(512),
+    "name" CHAR(512)
+);
 success!

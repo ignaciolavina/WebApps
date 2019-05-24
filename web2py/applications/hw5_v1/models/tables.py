@@ -10,7 +10,7 @@ db.define_table('product',
 )
 
 db.define_table('review',
-    Field('book_id', 'reference product'),
+    Field('product_id', 'reference product'),
     Field('body', 'text', default=''),
     Field('email', default=get_user_email()),
     Field('name', default=get_name())
