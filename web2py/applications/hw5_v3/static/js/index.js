@@ -1,11 +1,11 @@
 let processBooks = function () {
     let index = 0;
-    app.products.map((book) => {
-        Vue.set(book, 'index', index++);
-        Vue.set(book, 'showReviews', false);
-        Vue.set(book, 'yourReview', { body: '' });
-        Vue.set(book, 'otherReviews', []);
-        Vue.set(book, 'isHidden', false);
+    app.products.map((product) => {
+        Vue.set(product, 'index', index++);
+        Vue.set(product, 'showReviews', false);
+        Vue.set(product, 'yourReview', { body: '' });
+        Vue.set(product, 'otherReviews', []);
+        Vue.set(product, 'isHidden', false);
     });
 };
 
@@ -29,46 +29,46 @@ let onPageLoad = function () {
     });
 };
 
-let getYourReview = function (bookIndex) {
+let getYourReview = function (productIndex) {
     // exit the function if the user is not logged in
     if (app.loggedInUser == undefined) {
         return;
     }
 
-    let book = app.products[bookIndex];
+    let product = app.products[productIndex];
 
-    $.getJSON(getYourReviewUrl, { product_id: book.id, email: app.loggedInUser }, function (response) {
+    $.getJSON(getYourReviewUrl, { product_id: product.id, email: app.loggedInUser }, function (response) {
         if (response.review != null) {
-            book.yourReview = response.review;
+            product.yourReview = response.review;
         }
-        Vue.set(book.yourReview, 'hasBeenSaved', false);
+        Vue.set(product.yourReview, 'hasBeenSaved', false);
     });
 };
 
-let getOtherReviews = function (bookIndex) {
-    let book = app.products[bookIndex];
-    $.getJSON(getOtherReviewsUrl, { product_id: book.id }, function (response) {
-        book.otherReviews = response.other_reviews;
+let getOtherReviews = function (productIndex) {
+    let product = app.products[productIndex];
+    $.getJSON(getOtherReviewsUrl, { product_id: product.id }, function (response) {
+        product.otherReviews = response.other_reviews;
     });
 };
 
-let toggleReviewsSection = function (bookIndex) {
-    let book = app.products[bookIndex];
-    book.showReviews = !book.showReviews;
+let toggleReviewsSection = function (productIndex) {
+    let product = app.products[productIndex];
+    product.showReviews = !product.showReviews;
 };
 
-let saveReview = function (bookIndex) {
+let saveReview = function (productIndex) {
     // exit the function if the user is not logged in
     if (app.loggedInUser == undefined) {
         return;
     }
 
-    let book = app.products[bookIndex];
-    let yourReview = book.yourReview;
+    let product = app.products[productIndex];
+    let yourReview = product.yourReview;
     yourReview.hasBeenSaved = false;
 
     $.post(saveReviewUrl, {
-        product_id: book.id,
+        product_id: product.id,
         email: app.loggedInUser,
         body: yourReview.body
     }, function (response) {
