@@ -2,7 +2,12 @@ def get_logged_in_user():
     user = None if auth.user is None else auth.user.email
     return response.json(dict(user=user))
 
-def get_all_books():
+# def get_all_books():
+#     products = db(db.product).select()
+#     return response.json(dict(products=products))
+
+
+def get_all_products():
     products = db(db.product).select()
     return response.json(dict(products=products))
 
