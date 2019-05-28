@@ -322,6 +322,7 @@
 'Preface': 'Prefacio',
 'previous %s rows': 'fila %s anterior',
 'previous 100 rows': '100 filas anteriores',
+'Products': 'Products',
 'Profile': 'Perfil',
 'Profile updated': 'Perfil actualizado',
 'pygraphviz library not found': 'Libreria pygraphviz no encontrada',

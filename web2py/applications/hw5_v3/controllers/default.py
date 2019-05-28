@@ -8,7 +8,7 @@
 def index():
     return dict()
 
-def books():
+def products():
     db.product.id.readable = db.product.id.writable = False
     grid = SQLFORM.grid(
         db.product,
