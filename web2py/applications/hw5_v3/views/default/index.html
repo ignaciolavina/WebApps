@@ -15,18 +15,20 @@
 <div id="app">
   <div class="all-products">
     <div v-for="product in products" class="product-container">
-      <div class="stars-row">
-        <div v-for="i in starIndices">
-          <i v-if="i > product.avg_rating" class="fa fa-star-o"></i>
-          <i v-if="i <= product.avg_rating" class="fa fa-star"></i>
-        </div>
-      </div>
-      <div class="product-title">${ product.title }</div>
-      <div class="product-author">by ${ product.author }</div>
+      <div class="product-title">${ product.name }</div>
+      <div class="product-author">${ product.price } $</div>
+      <div class="product-author">Description: ${ product.description }</div>
       <div class="move-right">
         <button
           v-on:click="getYourReview(product.index); getOtherReviews(product.index); toggleReviewsSection(product.index);"
-          class="reviews-button">Reviews</button>
+          class="reviews-button">
+
+          <div class="stars-row" v-for="i in starIndices">
+            <i v-if="i > product.avg_rating" class="fa fa-star-o"></i>
+            <i v-if="i <= product.avg_rating" class="fa fa-star"></i>
+          </div>
+          Reviews
+        </button>
       </div>
 
       <div v-if="product.showReviews">

@@ -5,9 +5,12 @@ def get_name():
     return None if auth.user is None else auth.user.first_name + ' ' + auth.user.last_name
 
 db.define_table('product',
-    Field('title', default=''),
-    Field('author', default='')
+    Field('name', default=''),
+    Field('description', default=''),
+    Field('price', default= 0)
 )
+
+#  title/ auhtor
 
 db.define_table('review',
     Field('product_id', 'reference product'),    
