@@ -7,7 +7,7 @@ def get_name():
 db.define_table('product',
     Field('name', default=''),
     Field('description', default=''),
-    Field('price', default= 0)
+    Field('price', 'integer', default=0)
 )
 
 #  title/ auhtor

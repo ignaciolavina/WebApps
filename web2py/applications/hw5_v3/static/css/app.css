@@ -117,3 +117,12 @@
     text-align: left;
     font-size: 14px;
 }
+
+.close-button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(160, 206, 212);
+    padding: 5px 10px;
+    transition: 0.5s all;
+    margin-right: 55px;
+}

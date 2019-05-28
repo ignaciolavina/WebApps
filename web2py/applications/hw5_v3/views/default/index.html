@@ -53,7 +53,7 @@
               class="save-button">Save</button>
             <button v-if="product.yourReview.hasBeenSaved" class="save-button">
               Save
-              <i class="fa fa-check"></i>
+              <i class="fa fa-check" style="color:green"></i>
             </button>
           </div>
         </div>
@@ -71,6 +71,12 @@
             </div>
             <div class="other-review-body">${ review.body }</div>
           </div>
+        </div>
+        <div>
+          <button v-on:click="closeReview(product.index)" class="close-button">
+            Close
+            <!-- <i class="btn"></i> -->
+          </button>
         </div>
       </div>
 

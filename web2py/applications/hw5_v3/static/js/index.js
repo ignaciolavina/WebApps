@@ -56,6 +56,12 @@ let getOtherReviews = function (productIndex) {
 
 let toggleReviewsSection = function (productIndex) {
     let product = app.products[productIndex];
+
+    products = app.products;
+    products.forEach(p => {
+        p.showReviews = false;
+    });
+
     product.showReviews = !product.showReviews;
 };
 
@@ -119,6 +125,12 @@ let clickStar = function (productIndex, starNum) {
     });
 };
 
+
+let closeReview = function (productIndex) {
+    let product = app.products[productIndex];
+    product.showReviews = false;
+};
+
 let app = new Vue({
     el: "#app",
     delimiters: ['${', '}'],
@@ -136,7 +148,8 @@ let app = new Vue({
         leaveStarRow: leaveStarRow,
         clickStar: clickStar,
         getAllProducts: getAllProducts,
-        processProducts: processProducts
+        processProducts: processProducts,
+        closeReview: closeReview
     }
 });
 
