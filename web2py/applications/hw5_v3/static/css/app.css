@@ -11,6 +11,23 @@
     border-radius: 15px;
 }
 
+
+.stars-row {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.stars-row-modified {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    bottom: 20px;
+}
+
 .product-title {
     font-style: italic;
     font-size: 25px;
@@ -20,6 +37,12 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.space-apart {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .reviews-button {
     border: none;
