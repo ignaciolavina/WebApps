@@ -7,7 +7,7 @@ def get_all_products():
     for product in products:
         product.avg_rating = 0
         sum = 0
-        reviews = db((db.review.product_id == product.id) & (db.review.rating >= 0)).select()
+        reviews = db((db.review.product_id == product.id) & (db.review.rating > 0)).select()
         for review in reviews:
             sum += review.rating
         if (len(reviews) != 0):

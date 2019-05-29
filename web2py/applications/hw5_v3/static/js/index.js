@@ -3,7 +3,7 @@ let processProducts = function () {
     app.products.map((product) => {
         Vue.set(product, 'index', index++);
         Vue.set(product, 'showReviews', false);
-        Vue.set(product, 'yourReview', { body: '' });
+        Vue.set(product, 'yourReview', { body: '', rating: 0, numStars: 0 });
         Vue.set(product, 'otherReviews', []);
         Vue.set(product, 'isHidden', false);
     });
