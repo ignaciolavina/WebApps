@@ -15,17 +15,17 @@
   var search_url = "{{=URL('api', 'search', user_signature=True, hash_vars=False)}}";
 </script>
 
-<div id="app">
-
-  <input type="text" v-model="search_string" v-on:input="do_search" />
-
+<div id="app" class="center">
+  <h3>Search:
+    <input class="search-bar" type="text" v-model="search_string" v-on:input="do_search" />
+  </h3>
   <!-- <div v-for="s in products"> ${ s.name } </div> -->
 
   <div class="all-products">
     <div v-for="product in products" class="product-container">
       <div class="product-title">${ product.name }</div>
-      <div class="product-author">${ product.price } $</div>
-      <div class="product-author">Description: ${ product.description }</div>
+      <div class="product-description">${ product.price } $</div>
+      <div class="product-description">Description: ${ product.description }</div>
       <div class="move-right">
         <button
           v-on:click="getYourReview(product.index); getOtherReviews(product.index); toggleReviewsSection(product.index);"
@@ -69,8 +69,8 @@
             Reviews:</div>
           <div v-for="review in product.otherReviews" class="other-review">
             <div class="other-review-name">${ review.name }:</div>
-            <div class="stars-row-modified">
-              <div v-for="i in starIndices">
+            <div>
+              <div class="stars-row-modified" v-for="i in starIndices">
                 <i v-if="i > review.rating" class="fa fa-star-o"></i>
                 <i v-if="i <= review.rating" class="fa fa-star"></i>
               </div>
