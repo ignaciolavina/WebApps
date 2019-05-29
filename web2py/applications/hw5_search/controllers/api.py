@@ -55,10 +55,16 @@ def update_star():
 # @auth.requires_signature(hash_vars=False)
 def search():
     products = db(db.product).select()
+
+    # Obtaining the string of the search var from the request vars
     s = request.vars.search_string or ''
+    # list of products to send back from the server
     res = []
+    # Iterating thouth all the products
     for p in products:
+        # if the string is in the product name (upper & lower case match)
         if s.lower() in p.name.lower():
+            # Then add to the list "res" to send back
             res.append(p)
 
-    return response.json(dict(strings=res, products=products))
+    return response.json(dict(products_shown=res))

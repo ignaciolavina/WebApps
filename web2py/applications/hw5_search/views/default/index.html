@@ -19,7 +19,7 @@
 
   <input type="text" v-model="search_string" v-on:input="do_search" />
 
-  <div v-for="s in strings"> ${ s.name } </div>
+  <div v-for="s in products"> ${ s.name } </div>
 
   <div class="all-products">
     <div v-for="product in products" class="product-container">

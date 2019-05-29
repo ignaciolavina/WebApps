@@ -135,9 +135,12 @@ let do_search = function () {
     $.getJSON(search_url,
         { search_string: app.search_string },
         function (data) {
-            app.strings = data.strings;
-            // self.vue.products = data.products;
-            app.products = data.strings;
+            // Retrieveing all the products that contain part of the string on the search var
+            // Assigning the product retrieved to the list products (variable)
+            app.products = data.products_shown;
+            // We need to call again processProducts in order to get the properties like 
+            // index, isHidden, yourReview, etc (look inside processProducts())
+            processProducts();
         });
 };
 
@@ -150,7 +153,6 @@ let app = new Vue({
         starIndices: [1, 2, 3, 4, 5],
         loggedInUser: undefined,
         search_string: '',
-        strings: []
     },
     methods: {
         getYourReview: getYourReview,
